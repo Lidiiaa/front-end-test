@@ -1,0 +1,22 @@
+{
+  "name": "front-end-test",
+  "version": "1.0.0",
+  "description": "frent end test",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./style.scss:.style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lidiiaa/front-end-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lidiiaa/front-end-test/issues"
+  },
+  "homepage": "https://github.com/Lidiiaa/front-end-test#readme",
+  "dependencies": {
+    "sass": "^1.55.0"
+  }
+}
