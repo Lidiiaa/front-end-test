@@ -4,7 +4,8 @@
   "description": "frent end test",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./style.scss:.style.css"
+    "sass": "sass --watch ./style.scss:.style.css ./cssTableOne/tableOne.scss:./cssTableOne/tableOne.css ./cssTableTwo/tableTwo.scss:./cssTableTwo/tableTwo.css"
+
   },
   "repository": {
     "type": "git",
