@@ -1,3 +1,193 @@
-div.main {
-    background-color: violet;
+$mainColor:#70007C;
+$fontcolor:#212121;
+$secondary:#393939; 
+$smallRadius:0.15rem;
+$margin:11px;
+$lineWidth:6px;
+$curlyLineWidth: 34px;
+
+/*general*/
+section > div {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+
+/*le design des arrets*/
+
+
+ul {
+    
+    li {                                        /* tous les  arrets*/
+        list-style: none;
+        position:relative;
+        margin-bottom: $margin;
+        font-weight: 700;
+        &::after, &::before {
+            position: absolute;
+            content: "";
+            left:-15px;
+            top:50%;
+            transform: translate(-50%,-50%);
+        }
+        &::before {                             /*la ligne violette de bus*/
+            background-color: $mainColor;
+            width: $lineWidth;
+            height: $margin * 2.8;
+            top: 5px;
+            transform: translate(-50%,0%);
+            @media print {
+                background-color: $mainColor !important;
+                -webkit-print-color-adjust: exact; 
+                height: $margin * 3 !important;
+            }
+        }
+        &:hover {
+            cursor: pointer;
+        }
+        
+    }
+
+    li.finalStop {                      /*les arretes de depart et terminus*/
+        text-transform: uppercase;
+        //color: rgba(#212121,0.6);
+        border: 0.5px solid rgba(#212121,0.6);
+        
+        width: fit-content;
+        padding:0px 3px 0px 0px;
+        border-radius: $smallRadius;
+       &:before {
+            left: -15.5px;
+            @media print {
+                left:-16px;
+           
+            }
+       }
+        &:last-child, &:nth-child(2) {
+            &::before {
+                display: none;
+            }
+        }
+        &::after {
+            width: 23px;
+            height: 10px;
+            background-color: $secondary;
+            position: absolute;
+            @media print {
+                background-color: $secondary !important;
+                -webkit-print-color-adjust: exact; 
+           
+            }
+        }
+        span {
+            font-weight: bold;
+            background-color: $mainColor;
+            color: white;
+            padding:1.5px 3px;
+            margin-right:2px;
+            height: 100%;
+            border-top-left-radius: $smallRadius;
+            border-bottom-left-radius: $smallRadius;
+            @media print {
+                background-color: $mainColor !important;
+                -webkit-print-color-adjust: exact; 
+                height:100% !important;
+           
+            }
+        }
+    }
+    li:not(.finalStop):not(.active) {
+        &::after {
+            width: 15px;
+            height: 8px;
+            border: 1px solid $fontcolor;
+            background-color: white;
+        }
+    }
+    li.active {                         /*arret current*/
+        color: red;
+        font-weight: bold;
+        &::after {
+            border-radius: 100%;
+            width: $lineWidth * 2;
+            height: $lineWidth * 2;
+            background-color: $fontcolor;
+            @media print {
+                    background-color: $fontcolor !important;
+                    -webkit-print-color-adjust: exact; 
+               
+            }
+        }
+    }
+    li.passed  {                            /*arret passé*/
+        &::before {
+            background-color: $secondary;
+
+        }
+    }
+    li.long {                               /*les longs arretes*/
+        &::before {
+            height: $margin * 29;
+            @media print {
+                height: $margin * 29 !important;
+            }
+        }
+    } 
+    li.semilong {
+        &::before {
+            height: $margin * 13;
+            @media print {
+                height: $margin * 13 !important;
+            }
+        }
+    } 
+    ul.subLine {                            /*des ligne en curbe*/
+        position: relative;
+        &::before {
+            content:"";
+            width: $curlyLineWidth;
+            height: 10px;
+            border-right: $lineWidth solid $mainColor;
+            border-top: $lineWidth solid $mainColor;
+            position: absolute;
+            top: -8px;
+            left: ($curlyLineWidth - 2) * (-1);
+            transform: translateX(50%);
+        }
+         > ul.subLine li:last-child{
+            &::before {
+                content:"";
+            width: $curlyLineWidth;
+            height: 10px;
+            border-bottom: $lineWidth solid $mainColor;
+            border-right: $lineWidth solid $mainColor;
+            position: absolute;
+            top: 8px;
+            left: ($curlyLineWidth + 2) * (-2);
+            transform: translateX(50%);
+            background-color: transparent;
+            @media print {
+                background-color: white !important;
+                -webkit-print-color-adjust: exact; 
+                height: 10px !important;
+            }
+            }
+         }
+    }
+}
+
+#busStops > ul > li:first-child::before {
+    background-color: $secondary;
+    @media print {
+        background-color: $secondary !important;
+        -webkit-print-color-adjust: exact; 
+    }
+}
+
+
+@media print {
+   section.partTwo, header {
+    display: none !important;
+   } 
 }

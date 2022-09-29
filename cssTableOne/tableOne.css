@@ -1,10 +1,4 @@
 @charset "UTF-8";
-/*general*/
-body.table-page header {
-  text-align: center;
-  padding: 50px 20px;
-}
-
 /*création d'un tableau*/
 table {
   border-spacing: 0px;
@@ -13,14 +7,14 @@ table {
 table * {
   font-weight: 700;
 }
-table td {
+table td { /*la mise en page gerenrale des cases*/
   padding: 5px 2px;
   text-align: center;
   width: 32px;
   height: 17px;
 }
-table .tableHead, table .tableSubHead {
-  background-color: #18347a;
+table .tableHead, table .tableSubHead { /* la mise en page des head de teableau */
+  background-color: #18347a; /* et des horaires*/
   color: white;
 }
 table .tableHead th {
@@ -28,14 +22,17 @@ table .tableHead th {
   text-align: left;
   border-bottom: 1px solid white;
 }
+table .tableSubHead { /*la mise en page des horaires*/ }
 table .tableSubHead td:not(:last-child) {
   border-right: 1px solid white;
 }
+table .tableSubHead td:not(:empty) { /*ajouter d'un h pour les horaires*/ }
 table .tableSubHead td:not(:empty)::after {
   content: "h";
   font-weight: 500;
   font-size: 0.8rem;
 }
+table tr:not(.tableSubHead) { /* la mise en page des colons et des lignes*/ }
 table tr:not(.tableSubHead) td {
   padding-top: 0px;
   padding-bottom: 0px;
