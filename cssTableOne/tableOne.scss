@@ -1,4 +1,87 @@
+$blue:#18347a;
+$lightblue:#a3c2e5;
+$verylightblue:#dce9f6;
+$border:1px;
+
+/*general*/
+body.table-page {
+    header {
+        text-align:center;
+        padding: 50px 20px;
+    }
+}
+
+/*création d'un tableau*/
 table {
-    background-color: green;
-    border: 1px solid white;
+    border-spacing: 0px;
+    margin: 0 auto;
+    * {
+        font-weight: 700;
+    }
+    td {                                //la mise en page gerenrale des cases
+        padding:5px 2px;
+        text-align: center;
+        width: 32px;
+        height: 17px;
+    }
+    .tableHead, .tableSubHead {         // la mise en page des head de teableau 
+        background-color: $blue;        // et des horaires
+        color: white;
+        
+    }
+    .tableHead th{
+        padding: 10px;
+        text-align: left;
+        border-bottom: $border solid white;
+    }
+    .tableSubHead {                     //la mise en page des horaires
+        td:not(:last-child) {
+            border-right: $border solid white;
+        }
+        td:not(:empty) {                //ajouter d'un h pour les horaires
+            &::after{
+                content:"h";
+                font-weight: 500;
+                font-size: 0.8rem;
+            }
+        }
+    }
+    tr:not(.tableSubHead) {         // la mise en page des colons et des lignes
+        td {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+        td:nth-child(even) {
+            background-color: $verylightblue;
+        }
+        td:nth-child(odd) {
+            background-color: $lightblue;
+        }
+        
+    }
+}
+
+/*print*/
+
+@media print {
+    .tableHead, .tableSubHead {
+        background-color: $blue !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact; 
+        
+    }
+    table {
+        tr:not(.tableSubHead) {
+            
+            td:nth-child(even) {
+                background-color: $verylightblue !important;
+                -webkit-print-color-adjust: exact;
+            }
+            td:nth-child(odd) {
+                background-color: $lightblue !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+        }
+    }
 }

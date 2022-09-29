@@ -1,5 +1,5 @@
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 $fontcolor:#212121;
 $radius:40px;
@@ -18,7 +18,7 @@ h1, h2, h3, p, li {
 %box {
     border-radius: $radius;
     background-color: white;
-    padding:30px;
+    padding:50px;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px 0px;
     * {
         text-align: left;
@@ -27,6 +27,10 @@ h1, h2, h3, p, li {
 
 h1,h2,h3 {
    @extend %title;
+}
+
+h1 {
+    font-size: 2.5rem;
 }
 
 h2,h3 {
@@ -39,15 +43,18 @@ p, li {
 
 
 .button {
-    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    background-color: $fontcolor;
     color: white;
     text-transform: uppercase;
     border-radius: 40px;
-    padding:10px 15px;
+    padding:15px 20px;
     transition:all 0.2s ease;
     text-decoration: none;
+    border: 1px solid white;
     &:hover {
-        background-image: linear-gradient(to right, black 0%, #434343 100%);
+        background-color: white;
+        border-color: $fontcolor;
+        color: $fontcolor;
     }
 }
 
@@ -66,19 +73,39 @@ p, li {
         width: 100%;
         max-width: 350px;
         text-align:left;
+        h1 {
+            margin-bottom: 5px;
+        }
+        h3 {
+            margin-top: 0;
+        }
     }
 }
 
 /*section*/
 
-section {
+section.flex {
     display:flex;
+    justify-content: space-evenly;
     .bloc {
         width: 100%;
         max-width: 450px;
+        @extend %box;
+        h3 {
+            margin-top: 0;
+        }
+        p {
+            margin-bottom: 30px;
+        }
         .btnContainer {
             display:flex;
             flex-direction: column;
+            align-items: flex-start;
+            
+            .button:first-child {
+                margin-bottom: 20px;
+            }
+            
         }
     }
 }

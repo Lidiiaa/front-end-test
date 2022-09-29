@@ -1,7 +1,67 @@
+@charset "UTF-8";
+/*general*/
+body.table-page header {
+  text-align: center;
+  padding: 50px 20px;
+}
 
+/*création d'un tableau*/
 table {
-  background-color: green;
-  border: 1px solid white;
+  border-spacing: 0px;
+  margin: 0 auto;
+}
+table * {
+  font-weight: 700;
+}
+table td {
+  padding: 5px 2px;
+  text-align: center;
+  width: 32px;
+  height: 17px;
+}
+table .tableHead, table .tableSubHead {
+  background-color: #18347a;
+  color: white;
+}
+table .tableHead th {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid white;
+}
+table .tableSubHead td:not(:last-child) {
+  border-right: 1px solid white;
+}
+table .tableSubHead td:not(:empty)::after {
+  content: "h";
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+table tr:not(.tableSubHead) td {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+table tr:not(.tableSubHead) td:nth-child(even) {
+  background-color: #dce9f6;
+}
+table tr:not(.tableSubHead) td:nth-child(odd) {
+  background-color: #a3c2e5;
+}
+
+/*print*/
+@media print {
+  .tableHead, .tableSubHead {
+    background-color: #18347a !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+  }
+  table tr:not(.tableSubHead) td:nth-child(even) {
+    background-color: #dce9f6 !important;
+    -webkit-print-color-adjust: exact;
+  }
+  table tr:not(.tableSubHead) td:nth-child(odd) {
+    background-color: #a3c2e5 !important;
+    -webkit-print-color-adjust: exact;
+  }
 }
 
 /*# sourceMappingURL=tableOne.css.map */

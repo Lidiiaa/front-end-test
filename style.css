@@ -1,5 +1,5 @@
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /*Typo general*/
@@ -13,6 +13,20 @@ h1, h2, h3 {
   color: #212121;
 }
 
+section.flex .bloc {
+  border-radius: 40px;
+  background-color: white;
+  padding: 50px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px 0px;
+}
+section.flex .bloc * {
+  text-align: left;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
 h2, h3 {
   font-weight: 300;
 }
@@ -22,16 +36,19 @@ p, li {
 }
 
 .button {
-  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  background-color: #212121;
   color: white;
   text-transform: uppercase;
   border-radius: 40px;
-  padding: 10px 15px;
+  padding: 15px 20px;
   transition: all 0.2s ease;
   text-decoration: none;
+  border: 1px solid white;
 }
 .button:hover {
-  background-image: linear-gradient(to right, black 0%, #434343 100%);
+  background-color: white;
+  border-color: #212121;
+  color: #212121;
 }
 
 /*header*/
@@ -49,18 +66,35 @@ p, li {
   max-width: 350px;
   text-align: left;
 }
+.slider > div h1 {
+  margin-bottom: 5px;
+}
+.slider > div h3 {
+  margin-top: 0;
+}
 
 /*section*/
-section {
+section.flex {
   display: flex;
+  justify-content: space-evenly;
 }
-section .bloc {
+section.flex .bloc {
   width: 100%;
   max-width: 450px;
 }
-section .bloc .btnContainer {
+section.flex .bloc h3 {
+  margin-top: 0;
+}
+section.flex .bloc p {
+  margin-bottom: 30px;
+}
+section.flex .bloc .btnContainer {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+}
+section.flex .bloc .btnContainer .button:first-child {
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
