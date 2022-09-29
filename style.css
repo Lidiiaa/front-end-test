@@ -1,15 +1,44 @@
 body {
-  background-color: red;
-}
-body h1 {
-  font-size: 2rem;
-  color: white;
-}
-body p {
-  color: white;
-}
-body * {
-  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/*# sourceMappingURL=.style.css.map */
+/*Typo general*/
+h1, h2, h3, p, li {
+  line-height: 1.2;
+}
+
+h1, h2, h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #212121;
+}
+
+p, li {
+  color: #212121;
+}
+
+.button {
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  color: white;
+  text-transform: uppercase;
+  border-radius: 40px;
+  padding: 10px 15px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.button:hover {
+  background-image: linear-gradient(to right, black 0%, #434343 100%);
+}
+
+/*header*/
+.slider {
+  height: 500px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.slider > div {
+  width: fit-content;
+  text-align: left;
+}
+
+/*# sourceMappingURL=style.css.map */
