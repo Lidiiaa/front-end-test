@@ -1,6 +1,7 @@
 body {
   //font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-family: Arial, Helvetica, sans-serif;
+  
 }
 $fontcolor:#212121;
 $radius:40px;
@@ -15,12 +16,15 @@ h1, h2, h3, p, li {
     text-transform: uppercase;
     color: $fontcolor;
 }
+%shadow {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px 0px;
+}
 
 %box {
     border-radius: $radius;
     background-color: white;
     padding:50px;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px 0px;
+    @extend %shadow;
     * {
         text-align: left;
     }
@@ -46,13 +50,16 @@ p, li {
 .button {
     background-color: $fontcolor;
     color: white;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     border-radius: 40px;
     padding:10px 15px;
     transition:all 0.2s ease;
     text-decoration: none;
     border: 1px solid white;
     font-family: ui-serif;
+    position: relative;
+    display: flex;
+    align-items: center;
     &:hover {
         background-color: white;
         border-color: $fontcolor;
@@ -68,6 +75,46 @@ p, li {
             border-color: white;
         }
     }
+    iconify-icon {
+        margin-left: 5px;
+    }
+}
+
+.backButton {
+    position: fixed;
+    right:20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    a {
+        margin-top: 10px;
+        background-color: $fontcolor;
+        color: white;
+        transition: all 0.2s ease;
+        border-radius: 100%;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @extend %shadow;
+        &:hover {
+            background-color: white;
+            color: $fontcolor;
+            cursor: pointer;
+        }
+        &.home {
+            background-color: white;
+            color: $fontcolor;
+            &:hover {
+                background-color: $fontcolor;
+                color: white;
+            }
+        }
+    }
+    @media print {
+        display: none !important;
+    }
 }
 
 
@@ -76,15 +123,34 @@ p, li {
 .slider {
     height: 500px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    background-image: url('imgs/long-exposure-g0934a43d5_1920.jpg');
+    background-image: url('imgs/long-exposure-g70ae7a876_1920.jpg');
     background-position: center;
     background-size: cover;
+    position: relative;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        background: linear-gradient(90deg, rgb(22, 22, 22) 0%, rgba(0,212,255,0) 100%);
+    }
+    
     & > div  {
         width: 100%;
-        max-width: 350px;
+        max-width: 1024px;
         text-align:left;
+        padding: 20px;
+        position: relative;
+        * {
+            color: white;
+            max-width: 350px;
+        }
         h1 {
             margin-bottom: 5px;
         }
@@ -99,9 +165,13 @@ p, li {
 section.flex {
     display:flex;
     justify-content: space-evenly;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    flex-wrap: wrap;
     .bloc {
         width: 100%;
         max-width: 450px;
+        margin: 10px 20px;
         @extend %box;
         h3 {
             margin-top: 0;

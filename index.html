@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="cssTableOne/tableOne.css">
     <link rel="stylesheet" type="text/css" href="cssTableTwo/tableTwo.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
     <title>Front-end Project</title>
 </head>
 <body class="main-page">
@@ -14,20 +15,18 @@
             <div class="left">
                 <h1>Test</h1>
                 <h3>Front-End</h3>
+                <p>Pour faciliter la navigation j'ai devisé le proget en deux parties : une partie avec la présentation web + le code source sur le github et la deuxième partie est le bloc avec le téléchrgement des fichiers PDF direct.
+                </p>
+            
             </div>
-            <div class="right">
-                <p>Pour faciliter la vérification j'ai créé plusieres blocs qui permettent de télécharger les pdfs, de voir les résultats sur les pages web avec les explications et de regarder le code source</p>
-            </div>
+            
         </div>
     </header>
     <section class="main flex">
         <div class="bloc">
-            <div class="picture">
-                <img src="">
-            </div> 
             <div class="text">
-                <h3>Les résultas interactifs</h3>
-                <p>Voici je vous presente le tableau et le thermometre avec les commentaires</p>
+                <h3>Les résultas sur navigateur</h3>
+                <p>Voici le tableau et le thermometre sur le web. Sur les pages respectives vous pouvez trouver le code source</p>
                 <div class="btnContainer">
                     <a class="button" href="tableOnePage.html">Voir le tableau</a>
                     <a class="button" href="tableTwoPage.html">Voir le thermomètre</a>
@@ -37,13 +36,17 @@
         <div class="bloc">
             <div class="text">
                 <h3>Les PDFs</h3>
-                <p>Les PDFs ont été créés </p>
+                <p>Les PDFs ont été créés avec le @media print</p>
                 <div class="btnContainer">
-                    <a class="button" href="pdfs/Front-end%20Project%20-%20Tableau.pdf" download>Téléchrager le tableau</a>
-                    <a class="button" href="/fr">Téléchrager le thermomètre</a>
+                    <a class="button" href="pdfs/Front-end%20Project%20-%20Tableau.pdf" download>Téléchrager le tableau <iconify-icon icon="eva:download-fill"></iconify-icon></a>
+                    <a class="button" href="pdfs/Front-End%20Project%20thermomètre.pdf" download>Téléchrager le thermomètre <iconify-icon icon="eva:download-fill"></iconify-icon></a>
                 </div>
             </div>
         </div>   
     </section>
+    <div class="backButton">
+        <a id="back" class="goBack" onclick="history.back()"><iconify-icon icon="akar-icons:arrow-back"></iconify-icon></a>
+    </div>
+    <script src="script-glob.js"></script>
 </body>
 </html>

@@ -3,18 +3,23 @@
 table {
   border-spacing: 0px;
   margin: 0 auto;
+  /*la mise en page gerenrale des cases*/
+  /* la mise en page des head de teableau
+   et des horaires*/
+  /*la mise en page des horaires*/
+  /* la mise en page des colons et des lignes*/
 }
 table * {
   font-weight: 700;
 }
-table td { /*la mise en page gerenrale des cases*/
+table td {
   padding: 5px 2px;
   text-align: center;
   width: 32px;
   height: 17px;
 }
-table .tableHead, table .tableSubHead { /* la mise en page des head de teableau */
-  background-color: #18347a; /* et des horaires*/
+table .tableHead, table .tableSubHead {
+  background-color: #18347a;
   color: white;
 }
 table .tableHead th {
@@ -22,17 +27,17 @@ table .tableHead th {
   text-align: left;
   border-bottom: 1px solid white;
 }
-table .tableSubHead { /*la mise en page des horaires*/ }
+table .tableSubHead {
+  /*ajouter d'un h pour les horaires*/
+}
 table .tableSubHead td:not(:last-child) {
   border-right: 1px solid white;
 }
-table .tableSubHead td:not(:empty) { /*ajouter d'un h pour les horaires*/ }
 table .tableSubHead td:not(:empty)::after {
   content: "h";
   font-weight: 500;
   font-size: 0.8rem;
 }
-table tr:not(.tableSubHead) { /* la mise en page des colons et des lignes*/ }
 table tr:not(.tableSubHead) td {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -50,14 +55,17 @@ table tr:not(.tableSubHead) td:nth-child(odd) {
     background-color: #18347a !important;
     color: white !important;
     -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
   table tr:not(.tableSubHead) td:nth-child(even) {
     background-color: #dce9f6 !important;
     -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
   table tr:not(.tableSubHead) td:nth-child(odd) {
     background-color: #a3c2e5 !important;
     -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
 

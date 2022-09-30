@@ -6,11 +6,20 @@ section > div {
 }
 
 /*le design des arrets*/
-ul li { /* tous les  arrets*/
+ul {
+  /* tous les  arrets*/
+  /*les arretes de depart et terminus*/
+  /*arret current*/
+  /*arret passé*/
+  /*les longs arretes*/
+  /*des lignes en curbe*/
+}
+ul li {
   list-style: none;
   position: relative;
   margin-bottom: 11px;
   font-weight: 700;
+  /*la ligne violette de bus*/
 }
 ul li::after, ul li::before {
   position: absolute;
@@ -19,7 +28,7 @@ ul li::after, ul li::before {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-ul li::before { /*la ligne violette de bus*/
+ul li::before {
   background-color: #70007C;
   width: 6px;
   height: 30.8px;
@@ -30,13 +39,14 @@ ul li::before { /*la ligne violette de bus*/
   ul li::before {
     background-color: #70007C !important;
     -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
     height: 33px !important;
   }
 }
 ul li:hover {
   cursor: pointer;
 }
-ul li.finalStop { /*les arretes de depart et terminus*/
+ul li.finalStop {
   text-transform: uppercase;
   border: 0.5px solid rgba(33, 33, 33, 0.6);
   width: fit-content;
@@ -64,6 +74,7 @@ ul li.finalStop::after {
   ul li.finalStop::after {
     background-color: #393939 !important;
     -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
 ul li.finalStop span {
@@ -80,6 +91,7 @@ ul li.finalStop span {
   ul li.finalStop span {
     background-color: #70007C !important;
     -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
     height: 100% !important;
   }
 }
@@ -89,7 +101,7 @@ ul li:not(.finalStop):not(.active)::after {
   border: 1px solid #212121;
   background-color: white;
 }
-ul li.active { /*arret current*/
+ul li.active {
   color: red;
   font-weight: bold;
 }
@@ -103,13 +115,12 @@ ul li.active::after {
   ul li.active::after {
     background-color: #212121 !important;
     -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
-ul li.passed { /*arret passé*/ }
 ul li.passed::before {
   background-color: #393939;
 }
-ul li.long { /*les longs arretes*/ }
 ul li.long::before {
   height: 319px;
 }
@@ -126,7 +137,7 @@ ul li.semilong::before {
     height: 143px !important;
   }
 }
-ul ul.subLine { /*des ligne en curbe*/
+ul ul.subLine {
   position: relative;
 }
 ul ul.subLine::before {
@@ -156,6 +167,7 @@ ul ul.subLine > ul.subLine li:last-child::before {
   ul ul.subLine > ul.subLine li:last-child::before {
     background-color: white !important;
     -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
     height: 10px !important;
   }
 }
@@ -167,6 +179,7 @@ ul ul.subLine > ul.subLine li:last-child::before {
   #busStops > ul > li:first-child::before {
     background-color: #393939 !important;
     -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
 

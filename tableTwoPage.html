@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" type="text/css" href="cssTableOne/tableOne.css">
         <link rel="stylesheet" type="text/css" href="cssTableTwo/tableTwo.css">
-        
+        <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
     <title>Front-End Project thermomètre</title>
 </head>
 <body class="thermometre-page">
@@ -58,13 +58,19 @@
     </section>
     <section class="partTwo">
         <div class="btnContainer">
-            <a class="button" href="pdfs/Front-End%20Project%20thermomètre.pdf" target="_blank" download>Téléchrager le PDF</a>
-            <a class="button" href="cssTableTne/tableTwo.scss" target="_blank" download>Téléchrager le code SCSS</a>
-            <a class="button" href="tableTwoPage.html" target="_blank" download>Téléchrager le code HTML</a>
+            <a class="button" href="pdfs/Front-End%20Project%20thermomètre.pdf" target="_blank" download>Téléchrager le PDF <iconify-icon icon="eva:download-fill"></iconify-icon></a>
+            <a class="button" href="cssTableTne/tableTwo.scss" target="_blank" download>Téléchrager le code SCSS <iconify-icon icon="eva:download-fill"></iconify-icon></a>
+            <a class="button" href="https://github.com/Lidiiaa/front-end-test/blob/main/cssTableTwo/tableTwo.scss" target="_blank">Voir le code CSS/SCSS sur Github <iconify-icon icon="akar-icons:github-fill"></iconify-icon></a>
+            
+            <a class="button" href="https://github.com/Lidiiaa/front-end-test/blob/main/tableTwoPage.html" target="_blank">Voir le code HTML sur Github <iconify-icon icon="akar-icons:github-fill"></iconify-icon></a>
             <a class="button outline" href="tableOnePage.html">Voir le tableau</a>        
         </div>
     </section>
-    
+    <div class="backButton">
+        <a class="home" href="index.html"><iconify-icon icon="bxs:home"></iconify-icon></a>
+        <a id="back" class="goBack" onclick="history.back()"><iconify-icon icon="akar-icons:arrow-back"></iconify-icon></a>
+    </div>
     <script src="scriptLine.js"></script>
+    <script src="script-glob.js"></script>
 </body>
 </html>

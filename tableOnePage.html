@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" type="text/css" href="cssTableOne/tableOne.css">
         <link rel="stylesheet" type="text/css" href="cssTableTwo/tableTwo.css">
-        
+        <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
         <title>Front-end Project - Tableau</title>
     </head>
 <body class="table-page">
@@ -107,12 +107,20 @@
 
     <section>
         <div class="btnContainer">
-            <a class="button" href="pdfs/Front-end%20Project%20-%20Tableau.pdf" target="_blank" download>Téléchrager le tableau</a>
-            <a class="button" href="cssTableOne/tableOne.scss" target="_blank" download>Téléchrager le code</a>
-            <a class="button" href="tableOnePage.html" target="_blank" download>Téléchrager le code HTML</a>
-            <a class="button outline" href="tableTwoPage.html">Voir le thermomètre</a>        
+            <a class="button" href="pdfs/Front-end%20Project%20-%20Tableau.pdf" target="_blank" download>Téléchrager le tableau <iconify-icon icon="eva:download-fill"></iconify-icon></a>
+            <a class="button" href="cssTableOne/tableOne.scss" target="_blank" download>Téléchrager le code <iconify-icon icon="eva:download-fill"></iconify-icon></a>
+            <a class="button" href="https://github.com/Lidiiaa/front-end-test/blob/main/cssTableOne/tableOne.scss" target="_blank">Voir le code CSS/SCSS sur le Github <iconify-icon icon="akar-icons:github-fill"></iconify-icon></a>
+            <a class="button" href="https://github.com/Lidiiaa/front-end-test/blob/main/tableOnePage.html" target="_blank">Voir le code HTML sur le Github <iconify-icon icon="akar-icons:github-fill"></iconify-icon></a>
+           
+            <a class="button outline term" href="tableTwoPage.html">Voir le thermomètre</a>  
+                  
         </div>
     </section>
+    <div class="backButton">
+        <a class="home" href="index.html"><iconify-icon icon="bxs:home"></iconify-icon></a>
+        <a id="back" class="goBack" onclick="history.back()"><iconify-icon icon="akar-icons:arrow-back"></iconify-icon></a>
+    </div>
     <script src="script.js"></script>
+    <script src="script-glob.js"></script>
 </body>
 </html>
