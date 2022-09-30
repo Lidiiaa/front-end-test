@@ -19,32 +19,53 @@ section > div {
 
 ul {
     /* tous les  arrets*/
+    position: relative;
+    &::after, &::before {
+        content: "";
+        position: absolute;
+        left: 22px;
+        top: 6px;
+        width: $lineWidth;
+    }
+    /*la ligne violet*/
+    &::after {
+        height: 98%;
+        background: $mainColor;
+        z-index: -1;
+        @media print {
+            background-color: $mainColor !important;
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+       
+        }
+    }
+    /*la ligne grise*/
+    &::before {
+        height: 31px;
+        width: $lineWidth;
+        background: $secondary;
+        z-index: 1;
+        @media print {
+            background-color: $secondary !important;
+            -webkit-print-color-adjust: exact; 
+            print-color-adjust: exact;
+       
+        }
+    }
+    /*general style li*/
     li {                                        
         list-style: none;
         position:relative;
         margin-bottom: $margin;
         font-weight: 700;
-        &::after, &::before {
+        &::after {
             position: absolute;
             content: "";
             left:-15px;
             top:50%;
             transform: translate(-50%,-50%);
         }
-         /*la ligne violette de bus*/
-        &::before {                            
-            background-color: $mainColor;
-            width: $lineWidth;
-            height: $margin * 2.8;
-            top: 5px;
-            transform: translate(-50%,0%);
-            @media print {
-                background-color: $mainColor !important;
-                -webkit-print-color-adjust: exact; 
-                print-color-adjust: exact;
-                height: $margin * 3 !important;
-            }
-        }
+        
         &:hover {
             cursor: pointer;
         }
@@ -53,24 +74,10 @@ ul {
     /*les arretes de depart et terminus*/
     li.finalStop {                      
         text-transform: uppercase;
-        //color: rgba(#212121,0.6);
         border: 0.5px solid rgba(#212121,0.6);
-        
         width: fit-content;
         padding:0px 3px 0px 0px;
         border-radius: $smallRadius;
-       &:before {
-            left: -15.5px;
-            @media print {
-                left:-16px;
-           
-            }
-       }
-        &:last-child, &:nth-child(2) {
-            &::before {
-                display: none;
-            }
-        }
         &::after {
             width: 23px;
             height: 10px;
@@ -126,34 +133,19 @@ ul {
             }
         }
     }
-    /*arret passé*/
-    li.passed  {                            
-        &::before {
-            background-color: $secondary;
 
-        }
-    }
-    /*les longs arretes*/
-    li.long {                               
-        &::before {
-            height: $margin * 29;
-            @media print {
-                height: $margin * 29 !important;
-            }
-        }
-    } 
-    li.semilong {
-        &::before {
-            height: $margin * 13;
-            @media print {
-                height: $margin * 13 !important;
-            }
-        }
+    
+    & > ul::after {
+        top: -2px;
     } 
     /*des lignes en curbe*/
     ul.subLine {                            
         position: relative;
+
         &::before {
+            display: none; 
+        }
+        li:first-child::before {
             content:"";
             width: $curlyLineWidth;
             height: 10px;
@@ -161,40 +153,40 @@ ul {
             border-top: $lineWidth solid $mainColor;
             position: absolute;
             top: -8px;
-            left: ($curlyLineWidth - 2) * (-1);
-            transform: translateX(50%);
-        }
-         > ul.subLine li:last-child{
-            &::before {
-                content:"";
-            width: $curlyLineWidth;
-            height: 10px;
-            border-bottom: $lineWidth solid $mainColor;
-            border-right: $lineWidth solid $mainColor;
-            position: absolute;
-            top: 8px;
-            left: ($curlyLineWidth + 2) * (-2);
+            left: -72px;
             transform: translateX(50%);
             background-color: transparent;
             @media print {
-                background-color: white !important;
+                background-color: transparent !important;
                 -webkit-print-color-adjust: exact; 
                 print-color-adjust: exact;
                 height: 10px !important;
             }
+        }
+         > ul.subLine li:last-child{
+            &::before {
+                content:"";
+                width: $curlyLineWidth;
+                height: 10px;
+                border-bottom: $lineWidth solid $mainColor;
+                border-right: $lineWidth solid $mainColor;
+                position: absolute;
+                top: 8px;
+                left: -72px;
+                transform: translateX(50%);
+                background-color: transparent;
+                @media print {
+                    background-color: white !important;
+                    -webkit-print-color-adjust: exact; 
+                    print-color-adjust: exact;
+                    height: 10px !important;
+                }
             }
          }
     }
 }
 
-#busStops > ul > li:first-child::before {
-    background-color: $secondary;
-    @media print {
-        background-color: $secondary !important;
-        -webkit-print-color-adjust: exact; 
-        print-color-adjust: exact;
-    }
-}
+
 
 
 @media print {

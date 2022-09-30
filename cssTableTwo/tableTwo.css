@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*general*/
 section > div {
   width: fit-content;
@@ -8,40 +7,58 @@ section > div {
 /*le design des arrets*/
 ul {
   /* tous les  arrets*/
+  position: relative;
+  /*la ligne violet*/
+  /*la ligne grise*/
+  /*general style li*/
   /*les arretes de depart et terminus*/
   /*arret current*/
-  /*arret passé*/
-  /*les longs arretes*/
   /*des lignes en curbe*/
+}
+ul::after, ul::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 6px;
+  width: 6px;
+}
+ul::after {
+  height: 98%;
+  background: #70007C;
+  z-index: -1;
+}
+@media print {
+  ul::after {
+    background-color: #70007C !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+ul::before {
+  height: 31px;
+  width: 6px;
+  background: #393939;
+  z-index: 1;
+}
+@media print {
+  ul::before {
+    background-color: #393939 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 }
 ul li {
   list-style: none;
   position: relative;
   margin-bottom: 11px;
   font-weight: 700;
-  /*la ligne violette de bus*/
 }
-ul li::after, ul li::before {
+ul li::after {
   position: absolute;
   content: "";
   left: -15px;
   top: 50%;
   transform: translate(-50%, -50%);
-}
-ul li::before {
-  background-color: #70007C;
-  width: 6px;
-  height: 30.8px;
-  top: 5px;
-  transform: translate(-50%, 0%);
-}
-@media print {
-  ul li::before {
-    background-color: #70007C !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-    height: 33px !important;
-  }
 }
 ul li:hover {
   cursor: pointer;
@@ -52,17 +69,6 @@ ul li.finalStop {
   width: fit-content;
   padding: 0px 3px 0px 0px;
   border-radius: 0.15rem;
-}
-ul li.finalStop:before {
-  left: -15.5px;
-}
-@media print {
-  ul li.finalStop:before {
-    left: -16px;
-  }
-}
-ul li.finalStop:last-child::before, ul li.finalStop:nth-child(2)::before {
-  display: none;
 }
 ul li.finalStop::after {
   width: 23px;
@@ -118,29 +124,16 @@ ul li.active::after {
     print-color-adjust: exact;
   }
 }
-ul li.passed::before {
-  background-color: #393939;
-}
-ul li.long::before {
-  height: 319px;
-}
-@media print {
-  ul li.long::before {
-    height: 319px !important;
-  }
-}
-ul li.semilong::before {
-  height: 143px;
-}
-@media print {
-  ul li.semilong::before {
-    height: 143px !important;
-  }
+ul > ul::after {
+  top: -2px;
 }
 ul ul.subLine {
   position: relative;
 }
 ul ul.subLine::before {
+  display: none;
+}
+ul ul.subLine li:first-child::before {
   content: "";
   width: 34px;
   height: 10px;
@@ -148,8 +141,17 @@ ul ul.subLine::before {
   border-top: 6px solid #70007C;
   position: absolute;
   top: -8px;
-  left: -32px;
+  left: -72px;
   transform: translateX(50%);
+  background-color: transparent;
+}
+@media print {
+  ul ul.subLine li:first-child::before {
+    background-color: transparent !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    height: 10px !important;
+  }
 }
 ul ul.subLine > ul.subLine li:last-child::before {
   content: "";
@@ -169,17 +171,6 @@ ul ul.subLine > ul.subLine li:last-child::before {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
     height: 10px !important;
-  }
-}
-
-#busStops > ul > li:first-child::before {
-  background-color: #393939;
-}
-@media print {
-  #busStops > ul > li:first-child::before {
-    background-color: #393939 !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
   }
 }
 

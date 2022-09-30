@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function(e){
         getStops.forEach(function(el){
             el.classList.remove('active');
         })
-        stop.classList.add('active'); 
+        stop.classList.add('active');
+        console.log(e); 
       });
     });
 });
