@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*general*/
 section > div {
   width: fit-content;
@@ -6,14 +7,16 @@ section > div {
 
 /*le design des arrets*/
 ul {
-  /* tous les  arrets*/
+  /* tous les arrets*/
   position: relative;
-  /*la ligne violet*/
+  /*la ligne violette*/
   /*la ligne grise*/
-  /*general style li*/
+  /*à la base j'ai fait des befores pour chaque li 
+  mais j'ai changé d'avis avec un before et une after de parant, c'est plus simple*/
+  /*style géneral de li*/
   /*les arretes de depart et terminus*/
   /*arret current*/
-  /*des lignes en curbe*/
+  /*des lignes curbées*/
 }
 ul::after, ul::before {
   content: "";

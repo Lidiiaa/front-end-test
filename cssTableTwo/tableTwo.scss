@@ -18,7 +18,7 @@ section > div {
 
 
 ul {
-    /* tous les  arrets*/
+    /* tous les arrets*/
     position: relative;
     &::after, &::before {
         content: "";
@@ -27,7 +27,7 @@ ul {
         top: 6px;
         width: $lineWidth;
     }
-    /*la ligne violet*/
+    /*la ligne violette*/
     &::after {
         height: 98%;
         background: $mainColor;
@@ -52,7 +52,10 @@ ul {
        
         }
     }
-    /*general style li*/
+    /*à la base j'ai fait des befores pour chaque li 
+    mais j'ai changé d'avis avec un before et une after de parant, c'est plus simple*/
+    
+    /*style géneral de li*/
     li {                                        
         list-style: none;
         position:relative;
@@ -138,7 +141,7 @@ ul {
     & > ul::after {
         top: -2px;
     } 
-    /*des lignes en curbe*/
+    /*des lignes curbées*/
     ul.subLine {                            
         position: relative;
 

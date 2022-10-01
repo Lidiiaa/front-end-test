@@ -3,11 +3,11 @@
 table {
   border-spacing: 0px;
   margin: 0 auto;
-  /*la mise en page gerenrale des cases*/
+  /*la mise en page gererale des cases*/
   /* la mise en page des head de teableau
    et des horaires*/
   /*la mise en page des horaires*/
-  /* la mise en page des colons et des lignes*/
+  /* la mise en page des colonnes et des lignes*/
 }
 table * {
   font-weight: 700;
